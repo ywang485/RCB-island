@@ -8,18 +8,22 @@ public class CharacterContentLibrary {
     static public readonly float bodySkinRBase = 1f;
     static public readonly float bodySkinGBase = 0.914f;
     static public readonly float bodySkinBBase = 0.85f;
-    static public readonly float bodySkinBrightnessMax = 1f;
-    static public readonly float bodySkinBrightnessMin = 0.4f;
+    static public readonly float bodySkinBrightnessMax = 1.0f;
+    static public readonly float bodySkinBrightnessMin = 0.6f;
 
     // Hair color parameters
     static public readonly float hairBrightnessMin = 0.1f;
     static public readonly float hairBrightnessMax = 0.6f;
 
+    // Outfit color parameters
+    static public readonly float outfitBrightnessMin = 0.0f;
+    static public readonly float outfitBrightnessMax = 1.0f;
+
     // Body component library
-    static public readonly string[] maleHairs = new string[] { "Sprites/Character/Hair-Male-1" };
-    static public readonly string[] femaleHairs = new string[] { "Sprites/Character/Hair-Female-1", "Sprites/Character/Hair-Female-2" };
-    static public readonly string[] femaleOutfit = new string[] { "Sprites/Character/Outfit-Walk-Female-1"};
-    static public readonly string[] maleOutfit = new string[] { "Sprites/Character/Outfit-Walk-Male-1" };
+    static public readonly string[] maleHairs = new string[] { "Sprites/Character/Hair-4", "Sprites/Character/Hair-8", "Sprites/Character/Hair-5" };
+    static public readonly string[] femaleHairs = new string[] { "Sprites/Character/Hair-9", "Sprites/Character/Hair-2", "Sprites/Character/Hair-3", "Sprites/Character/Hair-6", "Sprites/Character/Hair-7" };
+    static public readonly string[] femaleOutfit = new string[] { "Sprites/Character/Outfit-1"};
+    static public readonly string[] maleOutfit = new string[] { "Sprites/Character/Outfit-1" };
 
     // Name templates
     static public readonly string[] femaleFirstNames = new string[] {"emma", "ava", "mia", "charlotte", "harper", "ella", "scarlett",

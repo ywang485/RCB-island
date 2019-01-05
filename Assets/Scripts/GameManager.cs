@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour {
         {
             characterBodies[i].GetComponent<Image>().color = new Color(CharacterContentLibrary.bodySkinRBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinGBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinBBase * characters[i].getSkinBrightness());
             characterBodies[i].transform.Find("Hair").GetComponent<Image>().color = characters[i].getHairColor();
+            characterBodies[i].transform.Find("Outfit").GetComponent<Image>().color = characters[i].getOutfitColor();
             if (characters[i].getGender() > 0) {
                 characterBodies[i].transform.Find("Hair").GetComponent<Image>().sprite = Resources.Load<Sprite>(CharacterContentLibrary.maleHairs[characters[i].getHairIdx()]);
                 characterBodies[i].transform.Find("Outfit").GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(CharacterContentLibrary.maleOutfit[characters[i].getOutfitIdx()]);

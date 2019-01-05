@@ -12,6 +12,7 @@ public class Character {
     int hairIdx;
     Color hairColor;
     int outfitIdx;
+    Color outfitColor;
 
     string[] traits;
 
@@ -51,6 +52,11 @@ public class Character {
         float hairColorG = Random.Range(CharacterContentLibrary.hairBrightnessMin, CharacterContentLibrary.hairBrightnessMax);
         float hairColorB = Random.Range(CharacterContentLibrary.hairBrightnessMin, CharacterContentLibrary.hairBrightnessMax);
         hairColor = new Color(hairColorR, hairColorG, hairColorB);
+        float outfitColorR = Random.Range(CharacterContentLibrary.outfitBrightnessMin, CharacterContentLibrary.outfitBrightnessMax);
+        float outfitColorG = Random.Range(CharacterContentLibrary.outfitBrightnessMin, CharacterContentLibrary.outfitBrightnessMax);
+        float outfitColorB = Random.Range(CharacterContentLibrary.outfitBrightnessMin, CharacterContentLibrary.outfitBrightnessMax);
+        outfitColor = new Color(outfitColorR, outfitColorG, outfitColorB);
+
     }
 
     public string getName()
@@ -81,5 +87,10 @@ public class Character {
     public int getOutfitIdx()
     {
         return outfitIdx;
+    }
+
+    public Color getOutfitColor()
+    {
+        return outfitColor;
     }
 }
