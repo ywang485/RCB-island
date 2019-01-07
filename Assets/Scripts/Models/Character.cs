@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Character {
 
-    string name;
+    string firstName;
+    string lastName;
     int gender;
 
     // Appearance related
@@ -31,20 +32,18 @@ public class Character {
         gender = Random.Range(0, 2);
 
         // Gender Related Parameters
-        string firstname;
         if (gender > 0)
         {
-            firstname = CharacterContentLibrary.maleFirstNames[Random.Range(0, CharacterContentLibrary.maleFirstNames.Length)];
+            firstName = CharacterContentLibrary.maleFirstNames[Random.Range(0, CharacterContentLibrary.maleFirstNames.Length)];
             hairIdx = Random.Range(0, CharacterContentLibrary.maleHairs.Length);
             outfitIdx = Random.Range(0, CharacterContentLibrary.maleOutfit.Length);
         } else
         {
-            firstname = CharacterContentLibrary.femaleFirstNames[Random.Range(0, CharacterContentLibrary.femaleFirstNames.Length)];
+            firstName = CharacterContentLibrary.femaleFirstNames[Random.Range(0, CharacterContentLibrary.femaleFirstNames.Length)];
             hairIdx = Random.Range(0, CharacterContentLibrary.femaleHairs.Length);
             outfitIdx = Random.Range(0, CharacterContentLibrary.femaleOutfit.Length);
         }
-        string lastname = CharacterContentLibrary.lastNames[Random.Range(0, CharacterContentLibrary.lastNames.Length)];
-        name = firstname + " " + lastname;
+        lastName = CharacterContentLibrary.lastNames[Random.Range(0, CharacterContentLibrary.lastNames.Length)];
 
         // Generate appearance
         skinBrightness = Random.Range(CharacterContentLibrary.bodySkinBrightnessMin, CharacterContentLibrary.bodySkinBrightnessMax);
@@ -59,9 +58,14 @@ public class Character {
 
     }
 
-    public string getName()
+    public string getFirstName()
     {
-        return name;
+        return firstName;
+    }
+
+    public string getLastName()
+    {
+        return lastName;
     }
   
     public float getSkinBrightness()
