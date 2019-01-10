@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 
     // Temporary
     public Text infoText;
-    public Image[] characterIcons;
+    public GameObject[] characterIcons;
     // End: Temporarys
 
     void InitializeGame()
@@ -48,18 +48,18 @@ public class GameManager : MonoBehaviour {
         // Temporary
         for (int i = 0; i < numCharacters; i++)
         {
-            characterIcons[i].GetComponent<Image>().color = new Color(CharacterContentLibrary.bodySkinRBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinGBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinBBase * characters[i].getSkinBrightness());
-            characterIcons[i].transform.Find("Hair").GetComponent<Image>().color = characters[i].getHairColor();
-            characterIcons[i].transform.Find("Outfit").GetComponent<Image>().color = characters[i].getOutfitColor();
+            characterIcons[i].transform.Find("CharacterIcon").GetComponent<Image>().color = new Color(CharacterContentLibrary.bodySkinRBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinGBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinBBase * characters[i].getSkinBrightness());
+            characterIcons[i].transform.Find("CharacterIcon").transform.Find("Hair").GetComponent<Image>().color = characters[i].getHairColor();
+            characterIcons[i].transform.Find("CharacterIcon").transform.Find("Outfit").GetComponent<Image>().color = characters[i].getOutfitColor();
             if (characters[i].getGender() > 0) {
-                characterIcons[i].transform.Find("Hair").GetComponent<Image>().sprite = Resources.Load<Sprite>(CharacterContentLibrary.maleHairs[characters[i].getHairIdx()]);
-                characterIcons[i].transform.Find("Outfit").GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(CharacterContentLibrary.maleOutfit[characters[i].getOutfitIdx()]);
+                characterIcons[i].transform.Find("CharacterIcon").transform.Find("Hair").GetComponent<Image>().sprite = Resources.Load<Sprite>(CharacterContentLibrary.maleHairs[characters[i].getHairIdx()]);
+                characterIcons[i].transform.Find("CharacterIcon").transform.Find("Outfit").GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(CharacterContentLibrary.maleOutfit[characters[i].getOutfitIdx()]);
             } else
             {
-                characterIcons[i].transform.Find("Hair").GetComponent<Image>().sprite = Resources.Load<Sprite>(CharacterContentLibrary.femaleHairs[characters[i].getHairIdx()]);
-                characterIcons[i].transform.Find("Outfit").GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(CharacterContentLibrary.femaleOutfit[characters[i].getOutfitIdx()]);
+                characterIcons[i].transform.Find("CharacterIcon").Find("Hair").GetComponent<Image>().sprite = Resources.Load<Sprite>(CharacterContentLibrary.femaleHairs[characters[i].getHairIdx()]);
+                characterIcons[i].transform.Find("CharacterIcon").Find("Outfit").GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(CharacterContentLibrary.femaleOutfit[characters[i].getOutfitIdx()]);
             }
-            characterIcons[i].transform.Find("NameTag").GetComponent<Text>().text = Util.UppercaseFirst(characters[i].getFirstName()) + " " + Util.UppercaseFirst(characters[i].getLastName());
+            characterIcons[i].transform.Find("CharacterIcon").transform.Find("NameTag").GetComponent<Text>().text = Util.UppercaseFirst(characters[i].getFirstName()) + "\n" + Util.UppercaseFirst(characters[i].getLastName());
         }
         // End: Temporary
     }

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Models\NarrativeGoal.cs" />
     <Compile Include="Assets\Scripts\Models\Player.cs" />
     <Compile Include="Assets\Scripts\Util.cs" />
+    <Compile Include="Assets\Scripts\View\ValueBar.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/ywang/Documents/Ongoing/RCB-island-survival/RCBIslandSurvival/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
