@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Character {
 
+    static public readonly int maxHunger = 100;
+    static public readonly int maxThirst = 100;
+    static public readonly int maxSanity = 100;
+
     string firstName;
     string lastName;
     int gender;
@@ -96,5 +100,55 @@ public class Character {
     public Color getOutfitColor()
     {
         return outfitColor;
+    }
+
+    public int getHunger()
+    {
+        return hunger;
+    }
+
+    public void setHunger(int newValue)
+    {
+        if (newValue <= 0)
+        {
+            hunger = 0;
+        } else if (newValue >= maxHunger)
+        {
+            hunger = maxHunger;
+        }
+    }
+
+    public int getThirst()
+    {
+        return thirst;
+    }
+
+    public void setThirst(int newValue)
+    {
+        if (newValue <= 0)
+        {
+            thirst = 0;
+        }
+        else if (newValue >= maxThirst)
+        {
+            thirst = maxThirst;
+        }
+    }
+
+    public int getSanity()
+    {
+        return sanity;
+    }
+
+    public void setSanity(int newValue)
+    {
+        if (newValue <= 0)
+        {
+            sanity = 0;
+        }
+        else if (newValue >= maxSanity)
+        {
+            sanity = maxSanity;
+        }
     }
 }

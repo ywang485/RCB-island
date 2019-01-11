@@ -6,15 +6,26 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     private Player[] players;
-    private Character[] characters;
+    public Character[] characters;
     private int numPlayers = 2;
     private int numCharacters = 5;
     private int currPlayer = 0;
+
+    static GameManager instance;
 
     // Temporary
     public Text infoText;
     public GameObject[] characterIcons;
     // End: Temporarys
+
+    static GameManager getGameManager()
+    {
+        if (instance == null) {
+            instance = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        }
+
+        return instance;
+    }
 
     void InitializeGame()
     {
