@@ -42,7 +42,7 @@ public class CharacterStatusUI : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         hungerBar.percentage = (float)character.getHunger() / (float)Character.maxHunger;
-        thirstBar.percentage = (float)character.getThirst()) / (float)Character.maxThirst;
+        thirstBar.percentage = (float)character.getThirst() / (float)Character.maxThirst;
         sanityBar.percentage = (float)character.getSanity() / (float)Character.maxSanity;
 	}
 }

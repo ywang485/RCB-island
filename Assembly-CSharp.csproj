@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Content\CharacterContentLibrary.cs" />
     <Compile Include="Assets\Scripts\Content\StoryContentLibrary.cs" />
+    <Compile Include="Assets\Scripts\Content\SystemComponents.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Models\Character.cs" />
     <Compile Include="Assets\Scripts\Models\NarrativeGoal.cs" />

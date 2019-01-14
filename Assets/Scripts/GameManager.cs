@@ -13,9 +13,10 @@ public class GameManager : MonoBehaviour {
 
     static GameManager instance;
 
+    public GameObject characterStatusStartingPosition;
+
     // Temporary
     public Text infoText;
-    public GameObject[] characterIcons;
     // End: Temporarys
 
     static GameManager getGameManager()
@@ -31,7 +32,17 @@ public class GameManager : MonoBehaviour {
     {
         CreatePlayers();
         CreateCharacters();
+        CreateCharacterStatusUI();
         currPlayer = 0;
+    }
+
+    void CreateCharacterStatusUI()
+    {
+        for (int i = 0; i < characters.Length; i ++)
+        {
+            CharacterStatusUI characterStatus = GameObject.Instantiate(Resources.Load<GameObject>(SystemComponents.characterStatusUI), new Vector2(25.0f + i * 125.0f, 35.0f), Quaternion.identity, GameObject.Find("CharacterPanel").transform).GetComponent<CharacterStatusUI>();
+            characterStatus.character = characters[i];
+        }
     }
 
     void CreatePlayers()
@@ -55,24 +66,6 @@ public class GameManager : MonoBehaviour {
         {
             characters[i] = new Character();
         }
-
-        // Temporary
-        for (int i = 0; i < numCharacters; i++)
-        {
-            characterIcons[i].transform.Find("CharacterIcon").GetComponent<Image>().color = new Color(CharacterContentLibrary.bodySkinRBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinGBase * characters[i].getSkinBrightness(), CharacterContentLibrary.bodySkinBBase * characters[i].getSkinBrightness());
-            characterIcons[i].transform.Find("CharacterIcon").transform.Find("Hair").GetComponent<Image>().color = characters[i].getHairColor();
-            characterIcons[i].transform.Find("CharacterIcon").transform.Find("Outfit").GetComponent<Image>().color = characters[i].getOutfitColor();
-            if (characters[i].getGender() > 0) {
-                characterIcons[i].transform.Find("CharacterIcon").transform.Find("Hair").GetComponent<Image>().sprite = Resources.Load<Sprite>(CharacterContentLibrary.maleHairs[characters[i].getHairIdx()]);
-                characterIcons[i].transform.Find("CharacterIcon").transform.Find("Outfit").GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(CharacterContentLibrary.maleOutfit[characters[i].getOutfitIdx()]);
-            } else
-            {
-                characterIcons[i].transform.Find("CharacterIcon").Find("Hair").GetComponent<Image>().sprite = Resources.Load<Sprite>(CharacterContentLibrary.femaleHairs[characters[i].getHairIdx()]);
-                characterIcons[i].transform.Find("CharacterIcon").Find("Outfit").GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(CharacterContentLibrary.femaleOutfit[characters[i].getOutfitIdx()]);
-            }
-            characterIcons[i].transform.Find("CharacterIcon").transform.Find("NameTag").GetComponent<Text>().text = Util.UppercaseFirst(characters[i].getFirstName()) + "\n" + Util.UppercaseFirst(characters[i].getLastName());
-        }
-        // End: Temporary
     }
 
 	// Use this for initialization
