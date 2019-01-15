@@ -10,16 +10,16 @@ public class GameManager : MonoBehaviour {
     private int numPlayers = 2;
     private int numCharacters = 5;
     private int currPlayer = 0;
+    public Map map;
 
     static GameManager instance;
-
-    public GameObject characterStatusStartingPosition;
+    public MapView mapView;
 
     // Temporary
     public Text infoText;
     // End: Temporarys
 
-    static GameManager getGameManager()
+    public static GameManager getGameManager()
     {
         if (instance == null) {
             instance = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour {
         CreateCharacters();
         CreateCharacterStatusUI();
         currPlayer = 0;
+        map = new Map();
+        mapView.map = map;
+        mapView.UpdateMapview();
     }
 
     void CreateCharacterStatusUI()

@@ -62,14 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Content\CharacterContentLibrary.cs" />
+    <Compile Include="Assets\Scripts\Content\MapContentLibrary.cs" />
     <Compile Include="Assets\Scripts\Content\StoryContentLibrary.cs" />
     <Compile Include="Assets\Scripts\Content\SystemComponents.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Models\Character.cs" />
+    <Compile Include="Assets\Scripts\Models\Map.cs" />
     <Compile Include="Assets\Scripts\Models\NarrativeGoal.cs" />
     <Compile Include="Assets\Scripts\Models\Player.cs" />
     <Compile Include="Assets\Scripts\Util.cs" />
     <Compile Include="Assets\Scripts\View\CharacterStatusUI.cs" />
+    <Compile Include="Assets\Scripts\View\MapView.cs" />
     <Compile Include="Assets\Scripts\View\ValueBar.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/ywang/Documents/Ongoing/RCB-island-survival/RCBIslandSurvival/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
