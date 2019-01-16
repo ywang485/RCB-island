@@ -8,8 +8,8 @@ public class MapView : MonoBehaviour {
     public Map map;
     static private int tileStartingX = 0;
     static private int tileStartingY = 0;
-    static private float tileWidth = 0.4f;
-    static private float tileHeight = 0.4f;
+    static private float tileWidth = 0.32f;
+    static private float tileHeight = 0.32f;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +27,10 @@ public class MapView : MonoBehaviour {
         {
             for (int j = 0; j < map.getMapWidth(); j ++)
             {
-                GameObject.Instantiate(Resources.Load<GameObject>(SystemComponents.mapTile), new Vector2(tileStartingX + i * tileWidth, tileStartingY + j * tileHeight), Quaternion.identity, transform);
+                GameObject mapTileObj = GameObject.Instantiate(Resources.Load<GameObject>(SystemComponents.mapTile), new Vector2(tileStartingX + i * tileWidth, tileStartingY + j * tileHeight), Quaternion.identity, transform);
+                MapTile tile = mapTileObj.GetComponent<MapTile>();
+                Debug.Log("Rendering grid " + i + ", " + j);
+                tile.setTileTypeShown(map.getMapGrid(i, j));
             }
         }
     }

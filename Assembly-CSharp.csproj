@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Models\Player.cs" />
     <Compile Include="Assets\Scripts\Util.cs" />
     <Compile Include="Assets\Scripts\View\CharacterStatusUI.cs" />
+    <Compile Include="Assets\Scripts\View\MapTile.cs" />
     <Compile Include="Assets\Scripts\View\MapView.cs" />
     <Compile Include="Assets\Scripts\View\ValueBar.cs" />
     <Reference Include="UnityEditor.StandardEvents">

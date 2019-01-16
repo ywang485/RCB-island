@@ -13,8 +13,8 @@ public class Map {
     };
 
     private mapGridType[,] mapGrid;
-    private int mapWidth = 100;
-    private int mapHeight = 100;
+    private int mapWidth = 10;
+    private int mapHeight = 10;
 
     public Map()
     {
